@@ -64,7 +64,6 @@ public class UserServiceimpl implements IuserService{
 	}
 	@Override
 	public List<User> findbyname(String username) {
-		
 		logger.info("查詢成功");
 		
 		logger.info("from:{}",username);

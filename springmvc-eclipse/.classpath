@@ -44,5 +44,6 @@
 	<classpathentry kind="lib" path="webRoot/WEB-INF/lib/log4j-core-2.5.jar"/>
 	<classpathentry kind="lib" path="webRoot/WEB-INF/lib/log4j-web-2.5.jar"/>
 	<classpathentry kind="lib" path="webRoot/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="webRoot/WEB-INF/lib/fastjson-1.2.51.jar"/>
 	<classpathentry kind="output" path="webRoot/WEB-INF/classes"/>
 </classpath>
