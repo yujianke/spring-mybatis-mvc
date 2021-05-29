@@ -9,6 +9,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String username;
     private String password;
+    private Integer money;
 	public String getUsername() {
 		return username;
 	}
@@ -20,6 +21,12 @@ public class User implements Serializable {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Integer getMoney() {
+		return money;
+	}
+	public void setMoney(Integer money) {
+		this.money = money;
 	}
 
   

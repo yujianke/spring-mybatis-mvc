@@ -5,5 +5,19 @@
 <mapper namespace="mapper.UserMapper">
     <select id="findbyId" parameterType="java.lang.String" resultType="model.User">
     SELECT * FROM user01 WHERE username = #{username}
-</select>
+    </select>
+    
+    <select id="findbyname" parameterType="java.lang.String" resultType="model.User">
+    SELECT * FROM user01 WHERE username = #{username}
+    </select>
+    <insert id="insert" parameterType="model.User">
+     insert into user01 values (#{username},#{password},#{money})
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+     delete from user01 where username= #{username}
+    </delete>
+    
+    <update id="update">
+    update user01 set username = #{username} ,password = #{password},money = #{money} where username= #{username}
+    </update>
 </mapper>

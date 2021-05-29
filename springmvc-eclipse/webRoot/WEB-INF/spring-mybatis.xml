@@ -20,7 +20,7 @@
     <!-- 引入配置文件 -->
     <bean id="propertyConfigurer"
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:jdbc.properties" />
+        <property name="location" value="/WEB-INF/jdbc.properties" />
     </bean>
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"  destroy-method="close">      
 	  <property name="url" value="${jdbc.jdbcUrl}" />
@@ -48,6 +48,19 @@
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:mapperxml/*.xml"></property>
+        <!-- 加载 MyBatis 的配置文件 -->
+        <property name="configLocation" value="/WEB-INF/SqlMapConfig.xml"/>
+        <property name="plugins">
+        <array>
+            <bean class="com.github.pagehelper.PageInterceptor">
+                  <property name="properties">
+                       <value>
+                       helperDialect=mysql
+                       </value>
+                  </property>
+            </bean>
+       </array>
+       </property>
     </bean>
     <!-- DAO接口所在的包名，spring会自动查找其下的类，！注意这句 value="sqlSessionFactory"，不是ref而是value -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
